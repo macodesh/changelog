@@ -6,7 +6,7 @@ export default function App() {
       <Navbar />
       <main className="main">
         <div className="main__title">
-          <h1>Chronos</h1>
+          <h1>Cronos</h1>
           <h2>Changelog</h2>
         </div>
       </main>
