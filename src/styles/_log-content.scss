@@ -24,8 +24,8 @@
     &-dot {
       @include shadow-md();
       width: 1.75rem;
-      height: 1.75em;
-      background-color: lighten($color: $dark-gray, $amount: 5);
+      height: 1.75rem;
+      background-color: lighten($color: $dark-gray, $amount: 10);
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -43,7 +43,7 @@
 
     &-line {
       width: 2px;
-      background-color: lighten($color: $dark-gray, $amount: 5);
+      background-color: lighten($color: $dark-gray, $amount: 10);
       height: 100%;
     }
   }
@@ -53,12 +53,24 @@
     margin-bottom: 4rem;
 
     &-status {
+      padding: 0.5em 0;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: $orange;
+      font-weight: 300;
+      margin-top: 2px;
     }
 
     &-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     &-text {
+      line-height: 1.35;
+      color: $light-gray;
+      font-size: 1.1rem;
     }
 
     &-preview {
@@ -66,20 +78,63 @@
 
     &-updates {
       .update {
-        &-icon {
-        }
+        margin-bottom: 1.5rem;
 
-        &-title {
+        &-top {
+          margin-bottom: 0.75rem;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          margin-left: -2rem;
+
+          &-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: lighten($color: $dark-gray, $amount: 10);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.5rem;
+
+            span {
+              vertical-align: middle;
+              display: inline-block;
+              font-size: 0.8rem;
+            }
+          }
+
+          &-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+          }
         }
 
         &-list {
+          list-style-type: none;
+          padding-left: 0.05rem;
         }
 
         &-item {
+          margin-bottom: 0.75rem;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 0.75rem;
+            height: 2px;
+            background-color: $light-gray;
+            top: 0.5rem;
+            left: -1.25rem;
+          }
+
           &-title {
+            margin-bottom: 0.25rem;
+            color: lighten($color: $light-gray, $amount: 5);
           }
 
           &-text {
+            color: $light-gray;
+            line-height: 1.5;
           }
         }
       }
