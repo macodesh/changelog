@@ -1,3 +1,4 @@
+import Logs from './components/Logs';
 import Navbar from './components/Navbar';
 
 export default function App() {
@@ -5,10 +6,12 @@ export default function App() {
     <>
       <Navbar />
       <main className="main">
-        <div className="main__title">
+        <div className="main-title">
           <h1>Cronos</h1>
           <h2>Changelog</h2>
         </div>
+
+        <Logs />
       </main>
     </>
   );
