@@ -1,0 +1,24 @@
+.log {
+  margin-top: 1rem;
+
+  &-tab {
+    margin: 0 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-update {
+    width: 10rem;
+    text-align: center;
+    padding: 0.5em;
+    padding-top: 0.75rem;
+    color: $gray;
+
+    &-active {
+      background-color: $dark-gray;
+      color: $white;
+      border-top-right-radius: 1.25rem;
+      border-top-left-radius: 1.25rem;
+    }
+  }
+}
