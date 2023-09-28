@@ -26,12 +26,13 @@ export default function LogContent() {
 
         <div className="content-updates">
           <div className="update">
-            <img
-              src=""
-              alt=""
-              className="update-icon"
-            />
-            <h4 className="update-title">Novas features</h4>
+            <div className="update-top">
+              <div className="update-top-icon">
+                <span>🚀</span>
+              </div>
+              <h4 className="update-top-title">Novas features</h4>
+            </div>
+
             <ul className="update-list">
               <li className="update-item">
                 <h5 className="update-item-title">Feature 1</h5>
@@ -51,15 +52,16 @@ export default function LogContent() {
           </div>
 
           <div className="update">
-            <img
-              src=""
-              alt=""
-              className="update-icon"
-            />
-            <h4 className="update-title">Correção de bugs</h4>
+            <div className="update-top">
+              <div className="update-top-icon">
+                <span>🛠</span>
+              </div>
+              <h4 className="update-top-title">Hot fixes de Setembro</h4>
+            </div>
+
             <ul className="update-list">
               <li className="update-item">
-                <h5 className="update-item-title">Bug fixes</h5>
+                <h5 className="update-item-title">Correções de bugs</h5>
                 <p className="update-item-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Natus, quidem!
