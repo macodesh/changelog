@@ -1,57 +1,39 @@
-export default function LogUpdate() {
+interface ILogUpdateProps {
+  label: string;
+  title: string;
+  topics: {
+    title: string;
+    text: string;
+    id: string;
+  }[];
+}
+
+export default function LogUpdate({ label, title, topics }: ILogUpdateProps) {
+  const labelMap: { [key: string]: string } = {
+    feature: '🚀',
+    bug: '🐞'
+  };
+
   return (
-    <>
-      <div className="update">
-        <div className="update-top">
-          <div className="update-top-icon">
-            <span>🚀</span>
-          </div>
-          <h4 className="update-top-title">Novas features</h4>
+    <div className="update">
+      <div className="update-top">
+        <div className="update-top-icon">
+          <span>{labelMap[label]}</span>
         </div>
-
-        <ul className="update-list">
-          <li className="update-item">
-            <h5 className="update-item-title">Feature 1</h5>
-            <p className="update-item-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quidem!
-            </p>
-          </li>
-          <li className="update-item">
-            <h5 className="update-item-title">Feature 2</h5>
-            <p className="update-item-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quidem!
-            </p>
-          </li>
-        </ul>
+        <h4 className="update-top-title">{title}</h4>
       </div>
 
-      <div className="update">
-        <div className="update-top">
-          <div className="update-top-icon">
-            <span>🛠</span>
-          </div>
-          <h4 className="update-top-title">Hot fixes de Setembro</h4>
-        </div>
-
-        <ul className="update-list">
-          <li className="update-item">
-            <h5 className="update-item-title">Correções de bugs</h5>
-            <p className="update-item-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quidem!
-            </p>
+      <ul className="update-list">
+        {topics.map(({ title, text, id }) => (
+          <li
+            className="update-item"
+            key={id}
+          >
+            <h5 className="update-item-title">{title}</h5>
+            <p className="update-item-text">{text}</p>
           </li>
-          <li className="update-item">
-            <h5 className="update-item-title">Melhorias de performance</h5>
-            <p className="update-item-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quidem!
-            </p>
-          </li>
-        </ul>
-      </div>
-    </>
+        ))}
+      </ul>
+    </div>
   );
 }
