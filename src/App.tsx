@@ -1,4 +1,4 @@
-import Logs from './components/Logs';
+import Logs from './components/changelogs';
 import Navbar from './components/Navbar';
 
 export default function App() {
