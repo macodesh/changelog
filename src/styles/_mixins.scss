@@ -9,3 +9,26 @@
 @mixin shadow-lg() {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
+
+$breakpoints-up: (
+  'medium': '40em',
+  'large': '64em',
+  'extra-large': '87.5em'
+);
+$breakpoints-down: (
+  'small': '39.9375em',
+  'medium': '63.9375em',
+  'large': '87.4375em'
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

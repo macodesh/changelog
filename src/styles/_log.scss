@@ -21,4 +21,13 @@
       border-top-left-radius: 1.25rem;
     }
   }
+
+  &-content {
+    padding: 1.5rem;
+    margin-top: 5px;
+    background-color: $dark-gray;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    min-height: 575px;
+  }
 }

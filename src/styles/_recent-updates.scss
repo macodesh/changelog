@@ -1,13 +1,7 @@
-.log-content {
-  margin-top: 5px;
-  background-color: $dark-gray;
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
-  min-height: 500px;
+.recent-updates {
   display: grid;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
   grid-template-columns: 2rem 1fr;
   gap: 1.5rem;
 
@@ -56,10 +50,24 @@
       padding: 0.5em 0;
       text-transform: uppercase;
       font-size: 0.9rem;
-      margin-bottom: 1rem;
       color: $orange;
       font-weight: 300;
       margin-top: 2px;
+    }
+
+    &-tag {
+      margin-top: 0.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 1.5rem;
+
+      span {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        background-color: lighten($color: $dark-gray, $amount: 10);
+        border-radius: 0.25rem;
+        color: $light-gray;
+        font-size: 0.8rem;
+      }
     }
 
     &-title {
@@ -71,75 +79,22 @@
       line-height: 1.35;
       color: $light-gray;
       font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
 
     &-preview {
+      padding: 1rem 0;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        border-radius: 1.25rem;
+      }
     }
 
     &-updates {
       margin-left: 1.75rem;
-
-      .update {
-        margin-bottom: 1.5rem;
-
-        &-top {
-          margin-bottom: 1rem;
-          display: flex;
-          gap: 0.5rem;
-          align-items: center;
-          margin-left: -2rem;
-
-          &-icon {
-            width: 1.5rem;
-            height: 1.5rem;
-            background-color: lighten($color: $dark-gray, $amount: 10);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 1.5rem;
-
-            span {
-              vertical-align: middle;
-              display: inline-block;
-              font-size: 0.8rem;
-            }
-          }
-
-          &-title {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-          }
-        }
-
-        &-list {
-          list-style-type: none;
-          padding-left: 0.05rem;
-        }
-
-        &-item {
-          margin-bottom: 0.75rem;
-          position: relative;
-
-          &::before {
-            content: '';
-            position: absolute;
-            width: 0.75rem;
-            height: 1px;
-            background-color: lighten($color: $gray, $amount: 10);
-            top: 0.4rem;
-            left: -1.75rem;
-          }
-
-          &-title {
-            margin-bottom: 0.25rem;
-            color: lighten($color: $light-gray, $amount: 10);
-          }
-
-          &-text {
-            color: $light-gray;
-            line-height: 1.5;
-          }
-        }
-      }
 
       &-toggle {
         width: 280px;
