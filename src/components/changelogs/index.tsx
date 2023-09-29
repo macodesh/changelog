@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import RecentUpdates from './RecentUpdates';
+import data from '../../data';
 
 export default function Logs() {
   const [activeTab, setActiveTab] = useState('recent-updates');
@@ -28,7 +29,23 @@ export default function Logs() {
       </div>
 
       <div className="log-content">
-        {activeTab === 'recent-updates' ? <RecentUpdates /> : ''}
+        {activeTab === 'recent-updates' ? (
+          <div className="recent-updates">
+            {data.map(({ preview, status, tag, text, title, updates, id }) => (
+              <RecentUpdates
+                preview={preview}
+                status={status}
+                tag={tag}
+                text={text}
+                title={title}
+                updates={updates}
+                key={id}
+              />
+            ))}
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     </section>
   );
