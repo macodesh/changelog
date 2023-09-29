@@ -11,7 +11,7 @@ export default function Navbar() {
             <a href="#">GitHub</a>
           </li>
           <li>
-            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
           </li>
         </ul>
       </nav>
