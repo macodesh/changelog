@@ -76,14 +76,15 @@ export default function LogContent() {
               </li>
             </ul>
           </div>
-
-          <button
-            className="content-updates-toggle"
-            type="button"
-          >
-            Mostrar mais
-          </button>
         </div>
+
+        <button
+          className="content-updates-toggle"
+          type="button"
+        >
+          <span>✖</span>
+          Mostrar mais
+        </button>
       </div>
     </div>
   );

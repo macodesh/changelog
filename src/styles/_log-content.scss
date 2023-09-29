@@ -77,11 +77,13 @@
     }
 
     &-updates {
+      margin-left: 1.75rem;
+
       .update {
         margin-bottom: 1.5rem;
 
         &-top {
-          margin-bottom: 0.75rem;
+          margin-bottom: 1rem;
           display: flex;
           gap: 0.5rem;
           align-items: center;
@@ -121,21 +123,40 @@
             content: '';
             position: absolute;
             width: 0.75rem;
-            height: 2px;
-            background-color: $light-gray;
-            top: 0.5rem;
-            left: -1.25rem;
+            height: 1px;
+            background-color: lighten($color: $gray, $amount: 10);
+            top: 0.4rem;
+            left: -1.75rem;
           }
 
           &-title {
             margin-bottom: 0.25rem;
-            color: lighten($color: $light-gray, $amount: 5);
+            color: lighten($color: $light-gray, $amount: 10);
           }
 
           &-text {
             color: $light-gray;
             line-height: 1.5;
           }
+        }
+      }
+
+      &-toggle {
+        width: 280px;
+        padding: 0.75rem 1rem;
+        background-color: $dark-gray;
+        color: $light-gray;
+        border: 2px solid $gray;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        position: relative;
+
+        span {
+          position: absolute;
+          font-size: 0.8rem;
+          vertical-align: middle;
+          left: 1rem;
+          color: $light-gray;
         }
       }
     }

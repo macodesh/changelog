@@ -3,10 +3,7 @@ export default function Navbar() {
     <header>
       <nav className="navbar">
         <div className="navbar-logo">
-          <img
-            src="https://picsum.photos/300/300"
-            alt="logo"
-          />
+          <span className="navbar-logo-image">🎯</span>
         </div>
 
         <ul className="navbar-links">
