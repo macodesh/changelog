@@ -1,11 +1,36 @@
 import { useState } from 'react';
 import LogUpdate from './LogUpdate';
 
-export default function RecentUpdates() {
+interface IRecentUpdatesProps {
+  status: string;
+  tag: string;
+  title: string;
+  text: string;
+  preview: string;
+  updates: {
+    id: string;
+    label: string;
+    title: string;
+    topics: {
+      id: string;
+      title: string;
+      text: string;
+    }[];
+  }[];
+}
+
+export default function RecentUpdates({
+  status,
+  tag,
+  title,
+  text,
+  preview,
+  updates
+}: IRecentUpdatesProps) {
   const [showUpdates, setShowUpdates] = useState(false);
 
   return (
-    <div className="recent-updates">
+    <>
       <div className="timeline">
         <div className="timeline-dot">
           <span className="timeline-circle"></span>
@@ -14,28 +39,29 @@ export default function RecentUpdates() {
       </div>
 
       <div className="content">
-        <h3 className="content-status">Em progresso</h3>
+        <h3 className="content-status">{status}</h3>
         <div className="content-tag">
-          <span>v1.0</span>
+          <span>{tag}</span>
         </div>
-        <h2 className="content-title">Múltiplos casos de uso</h2>
-        <p className="content-text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
-          itaque eos blanditiis unde animi? Perferendis eos quibusdam sint.
-          Ipsum sequi fuga dicta est aliquid vero eius ex! Consequatur, non.
-          Debitis placeat id laboriosam quo iste vitae voluptas eveniet minus
-          soluta?
-        </p>
+        <h2 className="content-title">{title}</h2>
+        <p className="content-text">{text}</p>
         <div className="content-preview">
           <img
-            src="https://picsum.photos/300/200"
-            alt=""
+            src={preview}
+            alt={title}
           />
         </div>
 
         {showUpdates ? (
           <div className="content-updates">
-            <LogUpdate />
+            {updates.map(({ id, label, title, topics }) => (
+              <LogUpdate
+                key={id}
+                label={label}
+                title={title}
+                topics={topics}
+              />
+            ))}
           </div>
         ) : (
           ''
@@ -50,6 +76,6 @@ export default function RecentUpdates() {
           {showUpdates ? 'Mostrar menos' : 'Mostrar mais'}
         </button>
       </div>
-    </div>
+    </>
   );
 }
